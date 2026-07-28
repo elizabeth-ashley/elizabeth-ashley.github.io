@@ -1,0 +1,127 @@
+// ---------------------------------------------------------------------------
+// v2026 design tokens
+//
+// Derived from the "Design System" project in Claude design and the Frutiger-set
+// resume it holds. Frutiger and Avenir Next LT Pro are Monotype-licensed and stay
+// in the PDF resume only; the web ships open-licensed equivalents:
+//   headings  Asap            — humanist grotesque, slightly condensed
+//   body      Hanken Grotesk  — geometric, matches Avenir's double-storey `a`
+//                               and x-height, so the PDF and site read as one hand
+//
+// Colours are exposed as CSS custom properties so the .night theme can swap them
+// at runtime without duplicating every rule. SCSS variables below mirror the light
+// values for the places that still need a compile-time colour.
+// ---------------------------------------------------------------------------
+
+:root {
+  // Spectrum — the signature device, carried over from the resume header bar
+  --spec-1: #d94141;
+  --spec-2: #f28e2b;
+  --spec-3: #f2c94c;
+  --spec-4: #c4df2a;
+  --spec-5: #7fc87a;
+  --spec-6: #1fb8c2;
+  --spec-7: #39bded;
+  --spec-8: #4f2aae;
+  --spectrum: linear-gradient(
+    90deg,
+    var(--spec-1),
+    var(--spec-2),
+    var(--spec-3),
+    var(--spec-4),
+    var(--spec-5),
+    var(--spec-6),
+    var(--spec-7),
+    var(--spec-8)
+  );
+
+  // Roles — light ground
+  --c-bg: #ffffff;
+  --c-surface: #f7f9fb;
+  --c-ink: #050505;
+  --c-body: #2b2b2b;
+  --c-muted: #6a737d;
+  --c-rule: #dde3ea;
+
+  --c-primary: #0079c1;
+  --c-primary-hover: #005e95;
+  --c-secondary: #1fb8c2;
+  --c-secondary-deep: #12787f;
+  --c-accent: #4f2aae;
+  --c-accent-deep: #5a2a90;
+  --c-sky: #39bded;
+  --c-sky-deep: #0b6c8c;
+
+  // Type
+  --font-heading: 'Asap', 'Avenir Next LT Pro', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk', 'Avenir Next LT Pro', system-ui, sans-serif;
+  --font-mono: 'Inconsolata', ui-monospace, monospace;
+
+  // Shape
+  --r-pill: 99px;
+  --r-card: 14px;
+  --rule-w: 1px;
+
+  // Elevation — tuned to the light ground
+  --shadow-sm: 0 1px 2px rgba(5, 5, 5, 0.06);
+  --shadow-md: 0 4px 14px rgba(5, 5, 5, 0.08);
+  --shadow-lg: 0 12px 32px rgba(5, 5, 5, 0.12);
+}
+
+// Dark ground. The spectrum is deliberately unchanged — it reads on either.
+// The blue lifts to #4fb3e8 because #0079c1 only reaches 2.4:1 on this bg.
+body.night {
+  --c-bg: #0f1419;
+  --c-surface: #161c22;
+  --c-ink: #ffffff;
+  --c-body: #c9d4df;
+  --c-muted: #8a97a5;
+  --c-rule: #263039;
+
+  --c-primary: #4fb3e8;
+  --c-primary-hover: #7ccbf2;
+  --c-secondary: #3fd0da;
+  --c-secondary-deep: #7fe3ea;
+  --c-accent: #a78bfa;
+  --c-accent-deep: #c4b0fc;
+  --c-sky: #6fcdf5;
+  --c-sky-deep: #a5e0f8;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+// ---------------------------------------------------------------------------
+// SCSS mirrors of the light-ground values.
+// Use the CSS custom properties in new work; these exist for legacy partials
+// and for the few cases needing a colour at compile time (e.g. colour functions).
+// ---------------------------------------------------------------------------
+$c-bg: #ffffff;
+$c-surface: #f7f9fb;
+$c-ink: #050505;
+$c-body: #2b2b2b;
+$c-muted: #6a737d;
+$c-rule: #dde3ea;
+
+$c-primary: #0079c1;
+$c-primary-hover: #005e95;
+$c-secondary: #1fb8c2;
+$c-accent: #4f2aae;
+$c-sky: #39bded;
+
+$spec-1: #d94141;
+$spec-2: #f28e2b;
+$spec-3: #f2c94c;
+$spec-4: #c4df2a;
+$spec-5: #7fc87a;
+$spec-6: #1fb8c2;
+$spec-7: #39bded;
+$spec-8: #4f2aae;
+
+$font-heading: 'Asap', 'Avenir Next LT Pro', system-ui, sans-serif;
+$font-body: 'Hanken Grotesk', 'Avenir Next LT Pro', system-ui, sans-serif;
+$font-mono: 'Inconsolata', ui-monospace, monospace;
+
+$r-pill: 99px;
+$r-card: 14px;

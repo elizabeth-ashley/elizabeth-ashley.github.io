@@ -9,7 +9,7 @@ html {
 }
 
 ::selection {
-  background: $yellow;
+  background: rgba(31, 184, 194, 0.28);
 }
 
 html,
@@ -18,18 +18,15 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $white;
-  color: $dark-grey;
-  font-family: $Apercu;
+  background-color: var(--c-bg);
+  color: var(--c-body);
+  font-family: var(--font-body);
   line-height: 1.5;
   width: 100%;
 
   &.night {
-    background-color: $night;
-    color: $slate;
     ::selection {
-      color: $black;
-      background: $yellow;
+      background: rgba(63, 208, 218, 0.32);
     }
     .switch-wrapper {
       .sun {
@@ -41,17 +38,18 @@ body {
         background-size: 100%;
       }
     }
+    // .intro is deliberately absent — it styles itself from the tokens, which
+    // already resolve to their dark values under body.night.
     a,
     strong,
-    .intro,
     .skills .skillz__category__label,
     .experience .job__time,
     .footer__copyright,
     .status {
-      color: $off-white;
+      color: var(--c-ink);
     }
     .section__content .underline-link:after {
-      background: $off-white;
+      background: var(--c-ink);
     }
   }
 }
@@ -80,9 +78,18 @@ img {
   vertical-align: middle;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--c-ink);
+  letter-spacing: -0.015em;
+}
+
 strong {
   font-weight: 700;
-  color: $black;
+  color: var(--c-ink);
 }
 
 .emoji {
@@ -113,11 +120,12 @@ strong {
     flex-shrink: 0;
     width: 200px;
     margin-right: 70px;
-    color: $blue;
+    font-family: var(--font-heading);
+    color: var(--c-primary);
     text-transform: uppercase;
     text-align: right;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 900;
+    letter-spacing: 0.13em;
     @include desktop {
       margin-right: 50px;
     }

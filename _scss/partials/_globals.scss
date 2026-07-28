@@ -1,22 +1,30 @@
-// Colors
-$night: #171c28;
-$black: #36363c;
-$dark-grey: #444452;
-$grey: #777777;
-$blue: #007bff;
-$slate: #afafbf;
-$off-white: #e7e7e7;
-$white: #ffffff;
-$green: #bae67e;
-$purple: #7d0ce8;
-$red: #ff0000;
-$orange: #e8850c;
-$yellow: #ffdc00;
-$accent: #ffcc66;
-// Fonts
-$font-stack: 'Source Sans Pro', system, system-ui, -apple-system,
-  BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-$Apercu: 'Apercu', $font-stack;
+// ---------------------------------------------------------------------------
+// Legacy palette — remapped onto the v2026 tokens in _tokens.scss.
+//
+// These names are kept only so the partials that have not been migrated yet
+// still compile and pick up the new brand colours. Do NOT use them in new work:
+// reach for the CSS custom properties (var(--c-primary), var(--font-body), …)
+// so the .night theme resolves correctly. Delete a variable here once no
+// partial references it.
+// ---------------------------------------------------------------------------
+$night: #0f1419; // was #171c28 — now the dark ground
+$black: $c-ink; // #050505
+$dark-grey: $c-body; // #2b2b2b
+$grey: $c-muted; // #6a737d
+$blue: $c-primary; // #0079c1
+$slate: #c9d4df; // dark-theme body text
+$off-white: #e6edf3;
+$white: $c-bg; // #ffffff
+$green: $spec-5;
+$purple: $c-accent; // #4f2aae
+$red: $spec-1;
+$orange: $spec-2;
+$yellow: $spec-3;
+$accent: $c-secondary; // #1fb8c2
+
+// Fonts — see _tokens.scss for the licensing rationale
+$font-stack: $font-body;
+$Apercu: $font-body;
 // Media queries
 $fifteen-inch: 1440px;
 $thirteen-inch: 1280px;
