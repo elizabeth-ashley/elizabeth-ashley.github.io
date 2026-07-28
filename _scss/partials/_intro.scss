@@ -1,136 +1,201 @@
+// The signature spectrum bar — fixed to the top of every page.
+.spectrum-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: var(--spectrum);
+  z-index: 100;
+  @include mobile {
+    height: 6px;
+  }
+}
+
 .intro {
-  padding: 120px 100px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 60px;
   max-width: 1440px;
   margin: 0 auto;
-  @include weird-medium {
-    padding: 120px 70px;
+  padding: 140px 100px 110px;
+
+  @include desktop {
+    gap: 40px;
+    padding: 120px 70px 90px;
   }
-  @include phablet {
-    padding: 120px 50px;
+  @include tablet {
+    grid-template-columns: 1fr;
+    padding: 110px 50px 80px;
   }
   @include mobile {
-    padding: 70px 50px;
+    padding: 90px 32px 70px;
   }
 
-  &__hello, &__tagline {
-    font-size: 2.5rem;
+  &__kicker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 22px;
+    margin: 0 0 18px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--c-secondary-deep);
+
+    span + span:before {
+      content: '\00b7';
+      margin-right: 22px;
+      color: var(--c-muted);
+    }
+    @include mobile {
+      font-size: 0.72rem;
+      gap: 0 14px;
+      span + span:before {
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__name {
+    margin: 0 0 8px;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    color: var(--c-ink);
+
     @include desktop {
-      font-size: 2.25rem;
+      font-size: 3.25rem;
     }
     @include tablet {
-      font-size: 2rem;
+      font-size: 2.75rem;
     }
     @include phablet {
-      font-size: 1.75rem;
+      font-size: 2.25rem;
     }
     @include small-mobile {
-      font-size: 1.5rem;
-    }
-    @include tiny-mobile {
-      font-size: 1.4rem;
-    }
-    .emoji {
-      width: 40px;
-      height: 40px;
-      @include desktop {
-        width: 35px;
-        height: 35px;
-      }
-      @include tablet {
-        width: 30px;
-        height: 30px;
-      }
-      @include small-mobile {
-        width: 25px;
-        height: 25px;
-      }
+      font-size: 1.9rem;
     }
   }
-  &__hello {
-    font-weight: 300;
-    .wave-hand {
-      background-image: url('../img/emojis/wave.png');
-      margin-left: 10px;
-      cursor: pointer;
 
-      &.animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
-      }
-      &.wave {
-        animation-name: wave;
-      }
+  &__role {
+    margin: 0 0 28px;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--c-primary);
+    @include phablet {
+      font-size: 1.1rem;
+    }
+  }
 
-      @keyframes wave {
-        from {
-          transform: none;
-        }
-        15% {
-          transform: translate3d(-20%, 0, 0) rotate3d(0, 0, 1, -10deg);
-        }
-        30% {
-          transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 7deg);
-        }
-        45% {
-          transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -10deg);
-        }
-        60% {
-          transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 5deg);
-        }
-        75% {
-          transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -2deg);
-        }
-        to {
-          transform: none;
-        }
-      }
-    }
-  }
-  &__tagline {
-    font-weight: 300;
-    max-width: 700px;
-    .name {
-      font-weight: 700;
-    }
-    .technologist {
-      background-image: url('../img/emojis/technologist.png');
-    }
-  }
-  &__contact {
-    font-size: 1.25rem;
+  &__lede {
+    max-width: 60ch;
+    margin: 0 0 18px;
+    font-size: 1.075rem;
     font-weight: 400;
+    line-height: 1.62;
+    color: var(--c-body);
+
+    strong {
+      font-weight: 700;
+      color: var(--c-ink);
+    }
     @include phablet {
       font-size: 1rem;
     }
-    .emoji {
-      &.pointer {
-        background-image: url('../img/emojis/pointright.png');
-        width: 30px;
-        height: 30px;
-        margin: 0 5px;
-        vertical-align: text-bottom;
-        @include phablet {
-          width: 25px;
-          height: 25px;
-        }
-      }
+
+    &--secondary {
+      color: var(--c-muted);
+      font-size: 1rem;
     }
-    .highlight-link {
-      @include transition;
-      font-weight: 400;
-      text-decoration: none;
-      display: inline-block;
-      padding: 2px 3px;
-      text-decoration: none;
-      box-shadow: inset 0 -3px 0 $blue;
-      &:hover {
-        box-shadow: inset 0 -33px 0 0 $blue;
-        color: $white;
-      }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 34px;
+  }
+
+  &__portrait {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: var(--r-card);
+    box-shadow: var(--shadow-md);
+
+    @include desktop {
+      width: 210px;
+      height: 210px;
     }
+    @include tablet {
+      width: 160px;
+      height: 160px;
+      order: -1;
+    }
+    @include mobile {
+      width: 130px;
+      height: 130px;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Buttons — pill geometry carried over from the resume's skill tags.
+// Focus ring is the accent purple so it never disappears against the blue fill.
+// ---------------------------------------------------------------------------
+.btn {
+  @include transition;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: 1.5px solid transparent;
+  border-radius: var(--r-pill);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 2px;
+  }
+
+  &--primary {
+    background: var(--c-primary);
+    color: #fff;
+    &:hover {
+      background: var(--c-primary-hover);
+      color: #fff;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+    &:hover {
+      background: var(--c-primary);
+      color: #fff;
+    }
+  }
+}
+
+// On the dark ground the primary fill is a light blue, so its label must go dark.
+body.night .btn {
+  &--primary {
+    color: #0f1419;
+    &:hover {
+      color: #0f1419;
+    }
+  }
+  &--secondary:hover {
+    color: #0f1419;
   }
 }
