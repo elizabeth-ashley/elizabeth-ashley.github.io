@@ -1,7 +1,7 @@
 # Site settings
 name: Elizabeth Ashley Menezes
 title: Elizabeth Ashley Menezes | Portfolio
-description: Design-minded scientist focused on communicating beautiful science & user experiences
+description: Senior Product Engineer for imagery and remote sensing at Esri — turning research-grade radar algorithms into software people can use
 url: https://elizabeth-ashley.github.io/
 baseurl: ''
 email: designer.elizabeth.ashley@gmail.com
@@ -32,12 +32,24 @@ exclude:
   - 'build'
   - 'gulpfile.js'
   - 'package.json'
+  - 'package-lock.json'
+  # Local bundler install path. Without this Jekyll walks into the gems and
+  # tries to render Jekyll's own site_template posts, which fails the build.
+  - 'vendor'
+  - '.bundle'
+  - '_scripts'
 
 keep_files:
   - 'CNAME'
   - '.git'
   - '.gitignore'
 
-plugins_dir:
-  - jekyll-minifier
+# `plugins_dir` points at a directory of local plugin source; listing gem names
+# under it silently loaded nothing, so neither of these was ever active. The key
+# for gem plugins is `plugins`.
+#
+# jekyll-minifier is deliberately not listed: it is not on the GitHub Pages
+# plugin whitelist, so naming it here would fail the build. HTML compression is
+# already handled by the `compress` layout in _layouts/compress.html.
+plugins:
   - jekyll-sitemap

@@ -2,3 +2,10 @@
 .DS_Store
 _site
 node_modules
+
+# Local Jekyll toolchain (see Gemfile — GitHub Pages does not use it)
+.jekyll-cache
+.jekyll-metadata
+vendor
+.bundle
+Gemfile.lock
