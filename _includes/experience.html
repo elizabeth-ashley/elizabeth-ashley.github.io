@@ -3,18 +3,21 @@
   <div class="section__content">
     <div class="jobs">
       {% for job in site.data.experience %}
-      <div class="job">
-        <div class="time-place">
+      <div class="job{% if job.current %} job--current{% endif %}">
+        <div class="job__head">
           <div class="job__company">
-            <a href="{{job.url}}" target="_blank">{{job.company}}</a>
+            <a href="{{job.url}}" target="_blank" rel="noopener">{{job.company}}</a>
           </div>
           <div class="job__time">{{job.time}}</div>
         </div>
-        <div class="job__position">{{job.position}}</div>
+        <div class="job__meta">
+          <div class="job__position">{{job.position}}</div>
+          {% if job.location %}<div class="job__location">{{job.location}}</div>{% endif %}
+        </div>
       </div>
       {% endfor %}
     </div>
 
-    <a href="{{site.resume}}" target="_blank" class="arrow-link">View My Resume</a>
+    <a href="{{site.resume}}" target="_blank" rel="noopener" class="btn btn--secondary">View my r&eacute;sum&eacute;</a>
   </div>
 </section>

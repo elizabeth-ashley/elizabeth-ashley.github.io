@@ -1,40 +1,40 @@
+# Kept in step with the resume. Halliburton is one entry spanning both the Field
+# Engineer and Geosteering Geoscientist titles, matching how the resume presents it.
 
-- company: Esri ‑ Environmental Systems Research Institute, Inc.
+- company: Esri — Environmental Systems Research Institute
   url: https://www.esri.com/en-us/arcgis/products/imagery-remote-sensing/overview
   time: Sep 2022 - Present
-  position: Radar Specialist, Raster Product Engineer
+  position: Senior Product Engineer, Imagery & Remote Sensing
+  location: Redlands, CA · Remote
+  current: true
 
 - company: Inspiring Girls Expeditions, Girls on Rock
   url: https://www.inspiringgirls.org/elizabeth-menezes
   time: Dec 2021 - Present
-  position: Science and Art Instructor
+  position: Science & Art Instructor
+  location: Boulder, CO
+  current: true
 
 - company: University of Colorado, Boulder
   url: https://www.colorado.edu/geologicalsciences/elizabeth-menezes
   time: Aug 2020 - Aug 2022
   position: Graduate Research Assistant
+  location: Boulder, CO
 
-# - company: Nature, Environment, Science & Technology Studio for the Arts
-#   url: http://nestcuboulder.org/
-#   time: May 2021 - Present
-#   position: Children's Book Writer
-
-- company: U.S. Bureau of Reclamation, CO
+- company: U.S. Bureau of Reclamation
   url: https://usbr.gov/
-  time: May 2021 - July 2021
+  time: May 2021 - Jul 2021
   position: Seismic Hazard Intern
+  location: Denver, CO
 
-- company: Halliburton Energy Services Inc., Norway
+- company: Halliburton Energy Services Inc.
   url: https://www.halliburton.com/en/about-us
-  time: Sep 2019 - Aug 2020
-  position: Geosteering Geoscientist
+  time: Sep 2018 - Sep 2020
+  position: Field Engineer / Geosteering Geoscientist
+  location: USA / Norway
 
-- company: Halliburton Energy Services Inc., Houston
-  url: https://www.halliburton.com/en/about-us
-  time: Sep 2018 - Aug 2019
-  position: Field Engineer
-
-- company: Denali National Park & Preserve, Alaska
+- company: Denali National Park & Preserve
   url: https://www.nps.gov/rlc/murie/index.htm
   time: May 2018 - Aug 2018
-  position: Science Communicator Intern
+  position: Science Communication Intern
+  location: Denali, AK

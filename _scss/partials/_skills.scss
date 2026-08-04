@@ -1,25 +1,86 @@
-.skills {
-  .skillz {
-    display: flex;
-    justify-content: space-between;
-    @include weird-medium {
-      flex-wrap: wrap;
+// Skills — mirrors the resume's two-column layout: a tinted pill naming the
+// category, with the items running alongside it.
+
+.skillz {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  &__category {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 10px;
     }
-    &__category {
-      @include weird-medium {
-        width: 47%;
-        margin-right: 5px;
-        margin-bottom: 25px;
-      }
-      &__label {
-        font-weight: 700;
-        color: $black;
-        text-transform: uppercase;
-      }
-      &__item {
-        margin: 3px 0;
-        font-size: 0.9rem;
-      }
+  }
+
+  // Category pill. Outlined rather than filled: the accent is used sparingly,
+  // and five solid fills would shout over the content they label.
+  &__pill {
+    display: inline-flex;
+    justify-content: center;
+    padding: 4px 12px;
+    border: 1.5px solid;
+    border-radius: var(--r-pill);
+    font-family: var(--font-heading);
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    @include tablet {
+      justify-self: start;
+    }
+
+    &--sky {
+      border-color: var(--c-sky);
+      color: var(--c-sky-deep);
+    }
+    &--teal {
+      border-color: var(--c-secondary);
+      color: var(--c-secondary-deep);
+    }
+    &--blue {
+      border-color: var(--c-primary);
+      color: var(--c-primary-hover);
+    }
+    &--purple,
+    &--violet {
+      border-color: var(--c-accent);
+      color: var(--c-accent-deep);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 0;
+    padding-top: 2px;
+  }
+
+  &__item {
+    font-size: 0.95rem;
+    color: var(--c-body);
+    line-height: 1.45;
+
+    // Separators are drawn, not typed, so they are never selected or announced
+    // by a screen reader.
+    &:not(:last-child):after {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--c-muted);
+      vertical-align: middle;
+      margin: 0 10px;
     }
   }
 }

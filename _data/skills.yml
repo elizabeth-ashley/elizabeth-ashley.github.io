@@ -1,25 +1,55 @@
-languages:
-  - item: Python & MATLAB
-  - item: Shell (bash/csh/tcsh)
-  - item: LaTeX & Markdown
-  - item: HTML & CSS
+# Mirrors the Technical Skills block on the resume, so the two stay in step.
+# `tone` selects the pill colour and maps to a .skillz__pill--* modifier.
 
+categories:
+  - label: SAR & Radar
+    tone: sky
+    items:
+      - InSAR time-series & surface deformation
+      - Interferometric coherence
+      - Speckle filtering
+      - Radiometric & terrain calibration
+      - Polarimetric decomposition
+      - Backscatter change detection
+      - Sentinel-1, NISAR, RADARSAT-2, ALOS PALSAR
 
-software:
-  - item: ArcGIS Pro/Map
-  - item: QGIS & GDAL
-  - item: GMTSAR
-  - item: ISCE & SNAP
+  - label: Geospatial
+    tone: teal
+    items:
+      - ArcGIS Pro & Image Analyst
+      - Image Server & image services
+      - Multidimensional raster analytics
+      - Raster functions & mosaic datasets
+      - Cloud-native workflows (COG, STAC, Zarr)
+      - QGIS & GDAL
+      - GMTSAR
 
-tools:
-  - item: Linux
-  - item: Jupyter
-  - item: Git & Github
-  - item: XAML
+  - label: Programming
+    tone: blue
+    items:
+      - Python (NumPy, SciPy, GDAL, xarray, ArcPy)
+      - Jupyter
+      - R & MATLAB
+      - JavaScript, HTML & CSS
+      - Git & GitHub
+      - LaTeX & Markdown
 
-design:
-  - item: Illustrator
-  - item: InDesign
-  - item: Photoshop
-  - item: Procreate
-  # - item: Tableau/D3
+  - label: Engineering
+    tone: purple
+    items:
+      - Prototype-to-production hand-off
+      - Functional & regression test design
+      - Technical specification writing
+      - Release planning
+      - Cross-functional project leadership
+      - Mentorship
+
+  - label: Design & Comms
+    tone: violet
+    items:
+      - Figma prototyping & wireframing
+      - UX research translation
+      - Illustrator, InDesign & Photoshop
+      - Premiere Pro & After Effects
+      - Scientific illustration
+      - StoryMaps & technical writing

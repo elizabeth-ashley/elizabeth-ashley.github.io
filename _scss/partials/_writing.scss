@@ -1,0 +1,91 @@
+// Writing & Speaking — a rule-separated list rather than cards. The entries are
+// mostly text, and cards would add five boxes of chrome for no extra meaning.
+
+.writing {
+  &__list {
+    border-top: 1px solid var(--c-rule);
+  }
+
+  &__item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--c-rule);
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  &__kind {
+    display: inline-flex;
+    padding: 3px 11px;
+    border: 1.5px solid;
+    border-radius: var(--r-pill);
+    font-family: var(--font-heading);
+    font-size: 0.64rem;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1.25;
+
+    &--sky {
+      border-color: var(--c-sky);
+      color: var(--c-sky-deep);
+    }
+    &--teal {
+      border-color: var(--c-secondary);
+      color: var(--c-secondary-deep);
+    }
+    &--blue {
+      border-color: var(--c-primary);
+      color: var(--c-primary-hover);
+    }
+    &--purple,
+    &--violet {
+      border-color: var(--c-accent);
+      color: var(--c-accent-deep);
+    }
+  }
+
+  &__year {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--c-muted);
+  }
+
+  &__title {
+    margin: 0 0 3px;
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--c-ink);
+
+    a {
+      color: inherit;
+      font-weight: inherit;
+      &:hover {
+        color: var(--c-primary);
+      }
+    }
+  }
+
+  &__publisher {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--c-primary);
+    margin-bottom: 6px;
+  }
+
+  &__desc {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 0.95rem;
+    color: var(--c-body);
+    line-height: 1.55;
+  }
+}

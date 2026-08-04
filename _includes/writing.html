@@ -1,0 +1,24 @@
+<section class="section writing">
+  <div class="section__title">Writing &amp; Speaking</div>
+  <div class="section__content">
+    <ul class="writing__list">
+      {% for piece in site.data.writing %}
+      <li class="writing__item">
+        <div class="writing__head">
+          <span class="writing__kind writing__kind--{{piece.tone}}">{{piece.kind}}</span>
+          <span class="writing__year">{{piece.year}}</span>
+        </div>
+        <h3 class="writing__title">
+          {% if piece.url %}
+          <a class="underline-link" href="{{piece.url}}" target="_blank" rel="noopener">{{piece.title}}</a>
+          {% else %}
+          {{piece.title}}
+          {% endif %}
+        </h3>
+        <div class="writing__publisher">{{piece.publisher}}</div>
+        <p class="writing__desc">{{piece.description}}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

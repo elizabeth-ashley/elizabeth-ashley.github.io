@@ -1,0 +1,65 @@
+# Writing & Presentations, mirroring the resume section of the same name.
+# `kind` renders as the pill label; `tone` selects its colour.
+
+- title: Top 20 Essential Skills for Imagery and Remote Sensing
+  kind: Book
+  tone: purple
+  year: '2025'
+  publisher: Esri Press
+  url: https://www.esri.com/en-us/esri-press/browse/top-20-essential-skills-for-imagery-and-remote-sensing
+  description: >-
+    Contributing author on the SAR chapter, covering radar fundamentals through
+    vegetation and water extraction in ArcGIS Pro.
+
+- title: Integrating SAR and Earth observation into GIS-based decision support
+  kind: Conference
+  tone: sky
+  year: '2025'
+  publisher: IEEE IGARSS
+  description: >-
+    Presenter at the International Geoscience and Remote Sensing Symposium.
+
+- title: Estimating vegetation biomass and wildfire CO₂ emissions
+  kind: Plenary
+  tone: blue
+  year: '2024'
+  publisher: Esri Developer & Technology Summit
+  url: https://links.esri.com/DevSummit24_ImageryPlenary
+  description: >-
+    Plenary talk on scalable raster analytics over Microsoft Planetary Computer
+    imagery, using STAC support in the ArcGIS API for Python.
+
+- title: Imagery & Remote Sensing MOOC
+  kind: Teaching
+  tone: teal
+  year: '2023–2025'
+  publisher: Esri
+  description: >-
+    Instructor and content contributor: image analysis, image services,
+    multidimensional data and applied remote sensing.
+
+- title: Graphic Design for Scientists
+  kind: Talk
+  tone: violet
+  year: '2024–2026'
+  publisher: Invited
+  description: >-
+    On visual hierarchy and audience-centred scientific communication, alongside
+    ongoing blogs, tutorials, StoryMaps and workshops for the Esri imagery community.
+
+- title: Geodetic Techniques Applied Towards Understanding Induced Earthquakes in Raton Basin
+  kind: Poster
+  tone: sky
+  year: '2021'
+  publisher: American Geophysical Union
+  description: >-
+    Technical poster on Sentinel-1 InSAR results from the Raton Basin, New Orleans, LA.
+
+- title: 'Denali for Families: A Visitor''s Guide'
+  kind: Book
+  tone: purple
+  year: '2018'
+  publisher: National Park Service & Alaska Geographic
+  url: https://www.nps.gov/dena/learn/kidsyouth/upload/Denali-for-Families.pdf
+  description: >-
+    Editor and illustrator of a children's guide to Denali National Park and Preserve.

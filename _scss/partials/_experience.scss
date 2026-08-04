@@ -1,32 +1,97 @@
 .experience {
   .jobs {
-    margin-bottom: 100px;
+    margin-bottom: 44px;
+    border-top: 1px solid var(--c-rule);
   }
+
   .job {
-    margin-bottom: 25px;
-    .time-place {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--c-rule);
+
+    &__head {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
       @include mobile {
         display: block;
       }
     }
+
     &__company {
-      font-weight: 700;
-    }
-    &__time {
-      font-size: 0.9rem;
-      font-family: 'Inconsolata', monospace;
-      @include mobile {
-        font-size: 0.8rem;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      color: var(--c-ink);
+      a {
+        color: inherit;
+        &:hover {
+          color: var(--c-primary);
+        }
       }
     }
-  }
-  .arrow-link {
-    font-size: 1.25rem;
-    &:after {
-      width: 20px;
-      height: 20px;
+
+    &__time {
+      flex: none;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--c-primary);
+      white-space: nowrap;
+      @include mobile {
+        white-space: normal;
+      }
+    }
+
+    &__meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 18px;
+      margin-top: 3px;
+      @include mobile {
+        display: block;
+      }
+    }
+
+    &__position {
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+    }
+
+    &__location {
+      flex: none;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--c-muted);
+      white-space: nowrap;
+      @include mobile {
+        white-space: normal;
+      }
+    }
+
+    // A current role gets a spectrum tick in the left margin rather than a
+    // badge, so the list stays quiet while the eye still finds the live rows.
+    &--current {
+      position: relative;
+      .job__head:before {
+        content: '';
+        position: absolute;
+        left: -16px;
+        top: 24px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--c-secondary);
+        @include tablet {
+          display: none;
+        }
+      }
     }
   }
 }
